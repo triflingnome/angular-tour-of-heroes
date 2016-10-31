@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { Location } from '@angular/common';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Params } from "@angular/router";
+import { Location } from "@angular/common";
 
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { Hero } from "./hero";
+import { HeroService } from "./hero.service";
 
 @Component({
     moduleId: module.id,
-    selector: 'my-hero-detail',
-    templateUrl: 'hero-detail.component.html',
-    styleUrls: [ 'dashboard.component.css' ]
+    selector: "my-hero-detail",
+    templateUrl: "hero-detail.component.html",
+    styleUrls: [ "dashboard.component.css" ]
 })
 
 export class HeroDetailComponent implements OnInit {
@@ -31,7 +31,7 @@ export class HeroDetailComponent implements OnInit {
     // lifecycle methods
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
-            let id = +params['id'];// all params are strings. id is converted to a number with "+"
+            let id = +params["id"]; // all params are strings. id is converted to a number with "+"
             this.heroService.getHero(id).then(hero => this.hero = hero);
         });
     }

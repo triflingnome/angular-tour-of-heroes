@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { Hero } from "./hero";
+import { HeroService } from "./hero.service";
 
 @Component({
     moduleId: module.id,
-    selector: 'my-dashboard',
-    templateUrl: 'dashboard.component.html',
-    styleUrls: [ 'dashboard.component.css' ]
+    selector: "my-dashboard",
+    templateUrl: "dashboard.component.html",
+    styleUrls: [ "dashboard.component.css" ]
 })
 
 export class DashboardComponent {
@@ -24,7 +24,7 @@ export class DashboardComponent {
     }
 
     gotoDetail(hero: Hero): void {
-        let link = ['/detail', hero.id];
+        let link = ["/detail", hero.id];
         this.router.navigate(link);
     }
 }
