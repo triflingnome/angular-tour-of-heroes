@@ -47,12 +47,12 @@ System.config({
 });
 
 System.import('systemjs.config.js')
-  .then(importSystemJsExtras)
+  // .then(importSystemJsExtras) // only needed if using 'systemjs.config.extras.js'
   .then(initTestBed)
   .then(initTesting);
 
 /** Optional SystemJS configuration extras. Keep going w/o it */
-function importSystemJsExtras(){
+/*function importSystemJsExtras(){
   return System.import('systemjs.config.extras.js')
   .catch(function(reason) {
     console.log(
@@ -60,7 +60,7 @@ function importSystemJsExtras(){
     );
     console.log(reason);
   });
-}
+}*/
 
 function initTestBed(){
   return Promise.all([
