@@ -9,7 +9,8 @@
     "test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
     "test-once": "tsc && karma start karma.conf.js --single-run",
     "lint": "tslint ./app/**/*.ts -t verbose",
-    "e2e": "tsc && concurrently \"http-server -s\" \"protractor protractor.config.js\" --kill-others --success first"
+    "e2e": "tsc && concurrently \"http-server -s\" \"protractor protractor.conf.js\" --kill-others --success first",
+    "webdriver-update": "webdriver-manager update"
   },
   "licenses": [
     {
