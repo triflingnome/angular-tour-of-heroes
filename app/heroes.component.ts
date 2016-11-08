@@ -39,6 +39,14 @@ export class HeroesComponent implements OnInit {
         this.router.navigate(["/detail", this.selectedHero.id]);
     }
 
+    delete(hero: Hero): void {
+        this.heroService.delete(hero.id)
+            .then(() => {
+                this.heroes = this.heroes.filter(h => h !== hero);
+                if (this.selectedHero === hero) { this.selectedHero = null; }
+            });
+    }
+
     // Lifecycle methods
     ngOnInit(): void {
         this.getHeroes();
